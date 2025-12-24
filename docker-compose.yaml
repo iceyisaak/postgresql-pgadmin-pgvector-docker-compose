@@ -1,0 +1,26 @@
+services:
+  pgdatabase:
+    image: pgvector/pgvector:pg17
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=test_db_1
+    volumes:
+      - "./db_postgres_data:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=me@iceyisaak.com
+      - PGADMIN_DEFAULT_PASSWORD=1234
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin/data
+    ports:
+      - "8080:80"
+volumes:
+  pgadmin_data:
+
+# networks:
+#   shared_db_network:
+#     name: common_pg_network 
