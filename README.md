@@ -7,9 +7,6 @@ This compose file creates for a single project:
 - pgVector
 
 ---
-### How to use `docker-compose.yaml` to set up PostgreSQL, pgAdmin, and pgvector
-- Simply put the `docker-compose.yaml` file in any project that will be used with PostgreSQL or pgVector (pgAdmin is also included)
----
 
 ### 🚀 Docker Compose Cheat Sheet
 
