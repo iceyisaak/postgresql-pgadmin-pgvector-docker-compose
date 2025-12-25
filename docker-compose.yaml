@@ -5,9 +5,9 @@ services:
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=1234
-      - POSTGRES_DB=test_db_1
+      - POSTGRES_DB=db_1
     volumes:
-      - "./db_postgres_data:/var/lib/postgresql/data"
+      - "./db_postgres_data:/var/lib/postgresql"
       # This is your WSL2 folder for easy CSV imports!
       - "./datasets:/data:ro" 
     ports:
