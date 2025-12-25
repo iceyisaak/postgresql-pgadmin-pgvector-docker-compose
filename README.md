@@ -2,9 +2,9 @@
 ##### Repo Link: https://github.com/iceyisaak/postgresql-pgadmin-pgvector-docker-compose-template
 
 This compose file creates for a single project:
-- postgresql
+- PostgreSQL
 - pgAdmin
-- PGVector
+- pgVector
 
 ---
 How to use `docker-compose.yaml` to set up PostgreSQL, pgAdmin, and pgvector

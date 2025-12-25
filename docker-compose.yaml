@@ -1,23 +1,29 @@
 services:
   pgdatabase:
-    image: pgvector/pgvector:pg17
+    image: pgvector/pgvector:pg18
+    container_name: postgres_18
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=1234
       - POSTGRES_DB=test_db_1
     volumes:
       - "./db_postgres_data:/var/lib/postgresql/data"
+      # This is your WSL2 folder for easy CSV imports!
+      - "./datasets:/data:ro" 
     ports:
       - "5432:5432"
+
   pgadmin:
     image: dpage/pgadmin4
+    container_name: pgadmin4
     environment:
-      - PGADMIN_DEFAULT_EMAIL=me@iceyisaak.com
+      - PGADMIN_DEFAULT_EMAIL=iceyisaak@gmail.com
       - PGADMIN_DEFAULT_PASSWORD=1234
     volumes:
-      - pgadmin_data:/var/lib/pgadmin/data
+      - pgadmin_data:/var/lib/pgadmin
     ports:
       - "8080:80"
+
 volumes:
   pgadmin_data:
 
