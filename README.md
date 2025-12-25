@@ -1,4 +1,4 @@
-# PosgreSQL pgAdmin pgVector Docker Compose Template
+# PosgreSQL pgAdmin pgVector Docker Compose
 ##### Repo Link: https://github.com/iceyisaak/postgresql-pgadmin-pgvector-docker-compose
 
 This compose file creates for a single project:
