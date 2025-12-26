@@ -9,7 +9,7 @@ services:
     volumes:
       - "./db_postgres_data:/var/lib/postgresql"
       # This is your WSL2 folder for easy CSV imports!
-      - "./datasets:/data:ro" 
+      - "./datasets/data:/data:ro" 
     ports:
       - "5432:5432"
 
