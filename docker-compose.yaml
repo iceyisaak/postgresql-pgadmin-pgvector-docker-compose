@@ -21,6 +21,7 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=1234
     volumes:
       - pgadmin_data:/var/lib/pgadmin
+      - "./datasets/data:/var/lib/pgadmin/storage/iceyisaak_gmail.com/imports:ro"
     ports:
       - "8080:80"
 
