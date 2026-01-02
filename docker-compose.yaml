@@ -16,12 +16,14 @@ services:
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin4
+    user: root
     environment:
       - PGADMIN_DEFAULT_EMAIL=iceyisaak@gmail.com
       - PGADMIN_DEFAULT_PASSWORD=1234
     volumes:
       - pgadmin_data:/var/lib/pgadmin
       - "./datasets/data:/var/lib/pgadmin/storage/iceyisaak_gmail.com/imports:ro"
+      - "./exports:/var/lib/pgadmin/storage/iceyisaak_gmail.com/exports"
     ports:
       - "8080:80"
 

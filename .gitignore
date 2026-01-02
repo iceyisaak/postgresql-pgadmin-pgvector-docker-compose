@@ -1,3 +1,4 @@
 *.csv
+*.sql
 /db_postgres_data
 /datasets
