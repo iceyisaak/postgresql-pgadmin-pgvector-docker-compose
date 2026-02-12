@@ -1,6 +1,17 @@
 services:
   pgdatabase:
-    image: pgvector/pgvector:pg18
+
+  # --- ORIGINAL SETUP (Commented out for reference) ---
+    # image: pgvector/pgvector:pg18
+
+
+    # --- NEW PG_CRON SETUP ---
+    build:
+      context: .
+      dockerfile: pg_cron-dockerfile
+    ########################################################
+
+
     container_name: postgres_18
     environment:
       - POSTGRES_USER=root
@@ -12,6 +23,16 @@ services:
       - "./datasets/data:/data:ro" 
     ports:
       - "5432:5432"
+
+
+
+    # --- NEW PG_CRON SETUP ---
+    command: |
+      postgres 
+      -c shared_preload_libraries='pg_cron' 
+      -c cron.database_name='bookly'
+    ######################################################
+
 
   pgadmin:
     image: dpage/pgadmin4
